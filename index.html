@@ -84,7 +84,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-26.91732597571894,-48.66131571564824],[-26.900753379732286,-48.6330355100863]]);
+        }).fitBounds([[-26.917345752086465,-48.66138493293459],[-26.900773156099813,-48.63292674006491]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -360,10 +360,6 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">cod</th>\
-                        <td class="visible-with-data" id="cod">' + (feature.properties['cod'] !== null ? autolinker.link(feature.properties['cod'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">Nome</th>\
                         <td class="visible-with-data" id="Nome">' + (feature.properties['Nome'] !== null ? autolinker.link(feature.properties['Nome'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -384,8 +380,8 @@
                         <td class="visible-with-data" id="Nfamilias">' + (feature.properties['Nfamilias'] !== null ? autolinker.link(feature.properties['Nfamilias'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ano de Disponibilização </th>\
-                        <td class="visible-with-data" id="Anodispon">' + (feature.properties['Anodispon'] !== null ? autolinker.link(feature.properties['Anodispon'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Ano de Disponibilização</th>\
+                        <td class="visible-with-data" id="ano">' + (feature.properties['ano'] !== null ? autolinker.link(feature.properties['ano'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -559,7 +555,7 @@
                         <td class="visible-with-data" id="Estado">' + (feature.properties['Estado'] !== null ? autolinker.link(feature.properties['Estado'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Municipio</th>\
+                        <th scope="row">Município</th>\
                         <td class="visible-with-data" id="Municipio">' + (feature.properties['Municipio'] !== null ? autolinker.link(feature.properties['Municipio'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -701,10 +697,6 @@
                 mouseover: highlightFeature,
             });
             var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Cod</th>\
-                        <td class="visible-with-data" id="Cod">' + (feature.properties['Cod'] !== null ? autolinker.link(feature.properties['Cod'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <th scope="row">Tipo de Equipamento </th>\
                         <td class="visible-with-data" id="TipoEquip">' + (feature.properties['TipoEquip'] !== null ? autolinker.link(feature.properties['TipoEquip'].toLocaleString()) : '') + '</td>\
@@ -2553,6 +2545,14 @@
                         <td class="visible-with-data" id="Grupo">' + (feature.properties['Grupo'] !== null ? autolinker.link(feature.properties['Grupo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <th scope="row">Unidade de Federação </th>\
+                        <td class="visible-with-data" id="UF">' + (feature.properties['UF'] !== null ? autolinker.link(feature.properties['UF'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Autoridade Portuária </th>\
+                        <td class="visible-with-data" id="AP">' + (feature.properties['AP'] !== null ? autolinker.link(feature.properties['AP'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <th scope="row">Número do Contrato </th>\
                         <td class="visible-with-data" id="Contrato">' + (feature.properties['Contrato'] !== null ? autolinker.link(feature.properties['Contrato'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -2577,12 +2577,52 @@
                         <td class="visible-with-data" id="Finalid">' + (feature.properties['Finalid'] !== null ? autolinker.link(feature.properties['Finalid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <th scope="row">Prazo Especificado no Contrato </th>\
+                        <td class="visible-with-data" id="Pra Cont">' + (feature.properties['Pra Cont'] !== null ? autolinker.link(feature.properties['Pra Cont'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Valor Unitário </th>\
+                        <td class="visible-with-data" id="Val unit">' + (feature.properties['Val unit'] !== null ? autolinker.link(feature.properties['Val unit'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Valor Total/Mês </th>\
+                        <td class="visible-with-data" id="Val mes">' + (feature.properties['Val mes'] !== null ? autolinker.link(feature.properties['Val mes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Pendências Jurídica </th>\
+                        <td class="visible-with-data" id="Pend jur">' + (feature.properties['Pend jur'] !== null ? autolinker.link(feature.properties['Pend jur'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Qual a Pendência Jurídica </th>\
+                        <td class="visible-with-data" id="QPendJur">' + (feature.properties['QPendJur'] !== null ? autolinker.link(feature.properties['QPendJur'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <th scope="row">Observações </th>\
                         <td class="visible-with-data" id="Obs">' + (feature.properties['Obs'] !== null ? autolinker.link(feature.properties['Obs'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Natureza da Carga Movimentada </th>\
                         <td class="visible-with-data" id="Carg Mov">' + (feature.properties['Carg Mov'] !== null ? autolinker.link(feature.properties['Carg Mov'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Prejudicado Pela Revogação da Resolução 1837/2011?</th>\
+                        <td class="visible-with-data" id="Res 1837">' + (feature.properties['Res 1837'] !== null ? autolinker.link(feature.properties['Res 1837'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Pode Ser Prorrogado? </th>\
+                        <td class="visible-with-data" id="Prorroga">' + (feature.properties['Prorroga'] !== null ? autolinker.link(feature.properties['Prorroga'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Situação Contábil </th>\
+                        <td class="visible-with-data" id="Sit Contab">' + (feature.properties['Sit Contab'] !== null ? autolinker.link(feature.properties['Sit Contab'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Já Foi Prorrogado com Fundamento na Resolução 525/2005? </th>\
+                        <td class="visible-with-data" id="Res 525">' + (feature.properties['Res 525'] !== null ? autolinker.link(feature.properties['Res 525'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Data de Celebração</th>\
+                        <td class="visible-with-data" id="DataCont">' + (feature.properties['DataCont'] !== null ? autolinker.link(feature.properties['DataCont'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data de Início do Arrendamento </th>\
@@ -2595,6 +2635,10 @@
                     <tr>\
                         <th scope="row">Área (m²) </th>\
                         <td class="visible-with-data" id="Aream2">' + (feature.properties['Aream2'] !== null ? autolinker.link(feature.properties['Aream2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Número de TAs na Pasta </th>\
+                        <td class="visible-with-data" id="NTAdit">' + (feature.properties['NTAdit'] !== null ? autolinker.link(feature.properties['NTAdit'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
